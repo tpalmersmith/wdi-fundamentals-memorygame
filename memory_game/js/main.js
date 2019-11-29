@@ -6,22 +6,28 @@ var cards = ["queen", "queen", "king", "king"];
 var cardsInPlay = [];
 // this will store the cards in play
 
-var cardOne = cards[0];
-//This assigns the first card in the array to cardOne
+function checkForMatch(){
+ if (cardsInPlay[0] === cardsInPlay[1]) {
+   console.log("You found a match!");
+ } else {
+   console.log("Sorry, try again.");
+}
 
-cardsInPlay.push(cardOne);
-// Adds cardOne to the cardsInPlay array
+}
 
-console.log("User flipped queen")
-//since the first card in the array is queen...
+function flipCard(cardId) {
 
-var cardTwo = cards[2];
-//This assigns the third card in the array to cardOne
+ 
 
-cardsInPlay.push(cardTwo);
-// Adds cardTwo to the cardsInPlay array
+ console.log("User flipped " + cards[cardId]);
+ cardsInPlay.push(cards[cardId]);
 
-console.log("User flipped king")
-//since the third card in the array is king...
+checkForMatch();
+ 
+}
+
+flipCard(0);
+flipCard(2);
+
 
 if (cardsInPlay.length === 2 && cardsInPlay[0] === cardsInPlay[1]) {alert("You found a match!");} else {alert("Sorry, try again.");};
